@@ -1,0 +1,15 @@
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  font-family: $base-font-family;
+  font-size: $base-font;
+  color: $color-secondary;
+}
+.container {
+  @include breakpoint($break-large) {
+    margin: auto;
+    max-width: $break-large;
+  }
+}
