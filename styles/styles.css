@@ -6,8 +6,16 @@ body{
 *{
 	box-sizing: border-box;
 }
+/* Main */
+main {
+  color: white;
+}
+header + main {
+  padding-top: 80px;
+}
 .container  {
-  max-width: 960px;
+  width: 100%;
+  max-width: 980px;
   margin: auto;
   text-align: left;
   padding: 0 10px;
@@ -21,15 +29,8 @@ body{
 /* Logo */
 .logo {
   display: inline-block;
-  /* position: fixed;
-  left: 0;
-  top: 0;
-  margin: 0;
-  padding: 10px;
-  z-index: 2;
-  text-align: left; */
   padding: 0;
-  margin: 0;
+  margin: 18px 0 0;
 }
 .logo a {
   color: white;
@@ -48,25 +49,26 @@ body{
   padding: 10px;
   color: white;
   text-decoration: none;
+  text-transform: uppercase;
 }
 .menu-trigger {
   display: inline-block;
   padding: 10px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.8);
   color: white;
   text-decoration: none;
   text-align: right;
 }
+.header-fixed {
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  z-index: 3;
+  left: 0;
+  right: 0;
+}
 
 @media screen and (max-width: 640px) {
-  .header-fixed {
-    position: fixed;
-    width: 100%;
-    padding: 10px;
-    z-index: 3;
-    left: 0;
-    right: 0;
-  }
   .menu-trigger {
     display: inline-block;
     position: fixed;
@@ -77,19 +79,17 @@ body{
     z-index: 5;
   }
   .navigation {
-    background: black;
     display: block;
     position: fixed;
+    overflow-y: auto;
     right: 0;
     top: 0;
+    left: 0;
     bottom: 0;
-    width: 100%;
-    overflow-y: auto;
+    background: rgba(0,0,0,0.8);
     z-index: 2;
     padding-top: 60px;
     transition: 0.3s transform cubic-bezier(0, 0, 0.58, 1);
-  }
-  .navigation.off-canvas-hide {
     transform: translateX(100%);
   }
   .navigation.off-canvas-show {
@@ -116,30 +116,31 @@ body{
 
 /* Video */
 .video-container {
-	position:relative;
-	padding-bottom:56.25%;
-	padding-top:30px;
-	height:0;
-	overflow:hidden;
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+  width: 100%;
+	height: 0;
+	overflow: hidden;
   z-index: 0;
 }
 .video-container iframe,
 .video-container object,
 .video-container embed {
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
-
-
 .photo-grid {
+  display: flex;
+  flex-wrap: wrap;
   text-align: center;
+  justify-content: center;
 }
 @media screen and (min-width: 361px) {
   .photo-grid {
-    display: flex;
     margin: 0 -5px;
   }
 }
